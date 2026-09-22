@@ -3,7 +3,3 @@ jdk:
 
 install:
   - ./gradlew :build_engine:publishToMavenLocal
-
-build:
-  artifacts:
-    - build_engine/build/outputs/aar/*.aar
