@@ -1,0 +1,8 @@
+.gradle/
+**/build/
+**/.codeassist/
+local.properties
+**/local.properties
+test.jks
+*.idsig
+*.log

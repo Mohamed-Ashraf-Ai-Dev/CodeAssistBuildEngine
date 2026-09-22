@@ -1,0 +1,24 @@
+plugins {
+    id 'com.android.library' version '8.7.3'
+    id 'maven-publish'
+}
+
+android { namespace 'com.codeassist.buildengine'; compileSdk 35
+    defaultConfig { minSdk 23; consumerProguardFiles 'consumer-rules.pro' }
+    publishing { singleVariant('release') { withSourcesJar() } }
+}
+
+// Toolchain binaries/jars are intentionally assets, not Gradle dependencies.
+// Copy aapt2, apksigner, d8/r8, bundletool, ecj and kotlinc into src/main/assets/toolchain.
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.Mohamed-Ashraf-Ai-Dev'
+                artifactId = 'CodeAssistBuildEngine'
+            }
+        }
+    }
+}

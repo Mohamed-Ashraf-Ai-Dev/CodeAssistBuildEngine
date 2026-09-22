@@ -1,0 +1,3 @@
+-dontwarn javax.annotation.**
+-keep class **.R { *; }
+-keep class **.R$* { *; }

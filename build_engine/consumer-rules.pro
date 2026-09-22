@@ -1,0 +1,1 @@
+-keep public class com.codeassist.buildengine.** { public *; }
